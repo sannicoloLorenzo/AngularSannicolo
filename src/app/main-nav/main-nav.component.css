@@ -1,0 +1,79 @@
+/* Add application styles & import */
+
+p {
+    font-family: Lato;
+  }
+  .active{
+      background-color: #cccccc;
+      padding: 8px 15px;
+      border-radius: 8px;
+  }
+  html, body { height: 100%; background-color: #cccccc; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  
+  
+  .sidenav-container {
+      height: 100%;
+      background-color: inherit
+    }
+    
+    .sidenav {
+      width: 200px;
+      box-shadow: 3px 0 6px rgba(0,0,0,.24);
+    }
+    
+    .sidenav .mat-toolbar {
+      background: inherit; 
+    }
+    
+    .mat-toolbar.mat-primary {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: rgb(31, 102, 209)
+    }
+    
+    .toolbar{
+      box-shadow: 0px 3px 6px rgba(0,0,0,.24);
+    }
+    
+    .fillSpace{
+      
+        /* */
+        flex: 1 1 auto;
+      
+    }
+  
+    .button { 
+      
+      margin: 0 2px 0 2px;
+    }
+    
+    .buttons{
+      display: flex;   
+    }
+  
+    .aligndown{
+      display: inline-flex;
+      vertical-align: middle;
+      font-size: smaller;
+    }
+  
+    .aligndownMenu{
+  
+      vertical-align: bottom;
+      margin-right: 5%;
+    }
+  
+    .icona{
+      display: inline-flex;
+      vertical-align: middle;
+    }
+  
+  .side-nav .active {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .is-active{
+    background-color: rgba(78, 68, 94, 0.824) !important;
+  }

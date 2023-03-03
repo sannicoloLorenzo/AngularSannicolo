@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) ">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+
+        <span class="aligndown1">
+          <a mat-list-item routerLink="bookList" routerLinkActive="active"
+            (click)="drawer.toggle();barService.sendNext('main',true)">
+            Book List
+          </a>
+        </span>
+
+        <a mat-list-item routerLink="bookAdd" routerLinkActive="active"
+          (click)="drawer.toggle();barService.sendNext('main',true)">
+            Book Add
+          </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" *ngIf="mainBar">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span routerLink="/" class="aligndown"><mat-icon>home</mat-icon>Biblioteca </span>
+        <span class="fillSpace"></span>
+
+        <span *ngIf="!(isHandset$ | async)" class="buttons">
+
+          <button mat-raised-button routerLink="bookList" routerLinkActive="active" color="accent" class="button">Book List</button>
+          <button mat-raised-button routerLink="bookAdd"  routerLinkActive="active" color="accent" class="button">Book Add</button>
+
+        </span>
+
+      </mat-toolbar>
+
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
